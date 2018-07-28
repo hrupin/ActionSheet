@@ -110,7 +110,7 @@ class ActionSheet : Fragment(), View.OnClickListener {
         parent.layoutParams = createFrameParams()
         mBg = View(activity)
         mBg.layoutParams = createFrameParams()
-        mBg.setBackgroundColor(Color.argb(19, 0, 0, 0))
+        mBg.setBackgroundColor(resources.getColor(R.color.colorBGActionSheet))
         mBg.id = Constants.BG_VIEW_ID
         mBg.setOnClickListener(this)
 
