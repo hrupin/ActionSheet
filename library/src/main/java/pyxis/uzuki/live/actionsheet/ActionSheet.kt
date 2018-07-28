@@ -47,18 +47,10 @@ class ActionSheet : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mDismissed = savedInstanceState?.getBoolean(Constants.EXTRA_DISMISSED) ?: false
-        val style = DialogFragment.STYLE_NO_TITLE
-        val theme = R.style.ActionSheetTheme
-        setStyle(style, theme)
     }
     
     override fun onStart() {
         super.onStart()
-        val window = dialog.window
-        val windowParams = window!!.attributes
-        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        window.attributes = windowParams
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -122,7 +114,7 @@ class ActionSheet : Fragment(), View.OnClickListener {
         parent.layoutParams = createFrameParams()
         mBg = View(activity)
         mBg.layoutParams = createFrameParams()
-        mBg.setBackgroundColor(resources.getColor(R.color.colorBGActionSheet))
+        mBg.setBackgroundColor(Color.argb(75, 255, 255, 255))
         mBg.id = Constants.BG_VIEW_ID
         mBg.setOnClickListener(this)
 
